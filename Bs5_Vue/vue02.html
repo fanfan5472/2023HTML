@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="/Bs5_Vue/vendor/vue/vue.min.js"></script>
+</head>
+
+<body>
+    <h2>Vue.js</h2>
+
+    <div id="app">
+      <u1>  
+        <li v-for="x in todos">
+          {{x.text}}
+        </li>
+      </u1>  
+      </div>
+      
+      <script>
+      myObject = new Vue({
+        el: '#app',
+        data: {
+          todos:[
+            { text: 'fanfan5472'},
+            { text: 'fanfan54720000'},
+            { text: 'fanfan54721111'},
+          ]
+        }
+      })
+      </script>
+
+<div id="myApp"> 
+    <!--使用v-on監聽JS事件-->
+    <button class="btn btn-primary" v-on:click="MyAjaxFunction">發出Ajax</button>
+    <br><br>
+    <!--如果users集合有資料才渲染<table>元素，否則移除-->
+    <table v-if="users.length>0" class="table table-striped">
+    <thead>
+    <tr>
+    <th>Username</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Website</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--使用v-for跑迴圈-->
+    <tr v-for="(user , index) in users">
+    <td>{{user.username}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.website}}</td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    
+      
+</body>
+</html>
