@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VueJS1</title>
+    <script src="/vendor/vue/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+       <ul>
+            <li v-for="item in todos"> {{item.text}} {{item.due}}</li>
+       </ul>
+    </div>
+    <button onclick="myfunction()">Click me!</button>
+</body>
+<script>
+    var myObject=new Vue({
+        el: "#app",
+        data: {todos:[
+            {text: 'Learn JS', due:"2023-10-27"},
+            {text: 'Learn Vue', due:"2023-11-15"},
+            {text: 'Build WebSite', due:"2023-12-10"}
+        ] }
+    })
+     
+    function myfunction(){
+        myObject.todos.push( {text: 'New Year', due:"2024-1-1"})
+    }
+
+</script>
+</html>
