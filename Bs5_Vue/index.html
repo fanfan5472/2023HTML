@@ -85,7 +85,17 @@
                     <h3 class="section-subheading text-white">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
             </div>
-            <div class="row text-center text-white">
+            <div class="row text-center">
+                <div v-for="item in Services" class="col-md-4" id="services"> 
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-stack-1x fa-inverse" v-bind:class="item.icon"></i>
+                    </span>
+                    <h4 class="service-heading">{{item.title}}</h4>
+                    <p class="text-muted">{{item.text}}</p>
+                </div>
+
+            <!--<div class="row text-center text-white">
                 <div class="col-md-4 ">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -112,7 +122,7 @@
                     <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam
                         architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -126,7 +136,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 portfolio-item">
+                <div v-for="item in Portfolio" class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+                    <a v-bind:href="item.href" class="portfolio-link" data-bs-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img :src="item.imgSrc" class="w-100" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{item.title}}</h4>
+                        <p class="text-muted">{{item.subtitle}}</p>
+                    </div>
+                </div>
+
+                <!--<div class="col-md-4 col-sm-6 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-bs-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -209,7 +234,7 @@
                         <h4>Dreams</h4>
                         <p class="text-muted">3D Design</p>
                     </div>
-                </div>
+                </div-->
             </div>
         </div>
     </section>
@@ -364,6 +389,10 @@
                                         required data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
+                                <div class="from-group">
+                                    <input type="file" class="form-control" id="myfile" name="myfile">
+                                    <p class="help-block text-danger"></p>
+                                </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -430,7 +459,7 @@
                         <div class="col-8">
                             <div class="modal-body ">
                                 <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
+                                <h2>墜入地獄</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt="">
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
@@ -653,7 +682,31 @@
 
     <!-- Theme JavaScript -->
     <!-- <script src="js/agency.min.js"></script> -->
+    <script src="/vendor/vue/vue.min.js"></script>
+    <script>
+        var myObject=new Vue({
+        el: "#portfolio",
+        data: {Portfolio: []}
+        })
+        $.ajax({
+            url:"/portfolio",
+            method: "get",
+            dataType: "json",
+            success: function(data){
+                myObject.Portfolio = data;
+            }
+        })
 
+        var vueService = new Vue({
+            el: "#services",
+            data: {Services:[
+               {icon:'fa-shopping-cart', title:'E-Commerce', text:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur porro laborum fuga repellat necessitatibus corporis nulla, in ex velit recusandae obcaecati maiores, doloremque quisquam similique, tempora aspernatur eligendi delectus! Rem.'},
+               {icon:'fa-laptop', title:'Responsive Design', text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.'},
+               {icon:'fa-lock', title:'Web Security', text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.'}
+            ]}
+        })
+    
+    </script>
 </body>
 
 </html>

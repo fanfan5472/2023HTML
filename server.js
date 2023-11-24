@@ -30,7 +30,15 @@ server.set("views", __dirname+"/views");
 server.get("/contact", function(req, res){
     //res.send("");
     res.redirect("https:/md.nutc.edu.tw");
-}); 
+});
+
+server.post("/contact", function(req, res){
+    console.log(req.body);
+    ContactDB.insert(req.body);
+    //email to manager
+    //res.send();
+    res.redirect("/");
+})
 
 server.get("/service", function(req, res){
 
@@ -44,33 +52,20 @@ server.get("/service", function(req, res){
 
 server.get("/portfolio", function(req, res){
     //res.send("U Got it!");
-    var portfolio=[
-        {href: '#portfolioModal1', imgSrc:"img/portfolio/roundicons.png", title:"Round Icons", subtitle:"Graphic Design"},
-        {href: '#portfolioModal2', imgSrc:"img/portfolio/startup-framework.png", title:"Startup Framework", subtitle:"GrWebsite Design"},
-        {href: '#portfolioModal3', imgSrc:'img/portfolio/treehouse.png', title:'Treehouse', subtitle:'Website Design'},
-        {href: '#portfolioModal4', imgSrc:'img/portfolio/golden.png', title:'Golden', subtitle:'Website Design'},
-        {href: '#portfolioModal5', imgSrc:'img/portfolio/escape.png', title:'Escape', subtitle:'Website Design'},
-        {href: '#portfolioModal6', imgSrc:'img/portfolio/dreams.png', title:'Dreams', subtitle:'3D Design'}
-    ]
-    res.send(portfolio);
-    // PortfolioDB.find({}).then(results => {
-    //     if(results !=null){
-    //         res.send(results);
-    //     }else{
-    //         res.send("Error!")
-    //     }
-    // }) 
-    
+ 
+    PortfolioDB.find({}).then(results => {
+        if(results !=null){
+            res.send(results);
+        }else{
+            res.send("Error!")
+        }
+    }) 
+    //   res.send(portfolio);
 })
 
 
  
-server.post("/contact", function(req, res){
-    console.log(req.body);
-    ContactDB.insert(req.body);
-    res.send();
-    //res.redirect("/index.html");
-})
+
 
 
 server.listen(5500, function(){
