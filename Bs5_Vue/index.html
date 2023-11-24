@@ -24,7 +24,26 @@
 
     <!-- Theme CSS -->
     <link href="css/agency.css" rel="stylesheet">
-
+    <!-- YT影片播放-->
+    <script>
+        $(document).ready(function(){
+            /* 获取 iframe src 属性值，即 YouTube 视频 url
+             并将其存储在变量中 */
+            var url = $("#cartoonVideo").attr('src');
+            
+            /* 将空 url 值分配给 iframe src 属性时
+             模态隐藏，停止视频播放 */
+            $("#myModal").on('hide.bs.modal', function(){
+                $("#cartoonVideo").attr('src', '');
+            });
+            
+            /* 将最初存储的 url 分配回 iframe src
+             再次显示模态时的属性 */
+            $("#myModal").on('show.bs.modal', function(){
+                $("#cartoonVideo").attr('src', url);
+            });
+        });
+        </script>
 </head>
 
 <body id="page-top" class="">
@@ -460,8 +479,29 @@
                             <div class="modal-body ">
                                 <!-- Project Details Go Here -->
                                 <h2>墜入地獄</h2>
+                                <iframe  width="560" height="315" src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <!--YT影片-->
+                                <div class="m-4">
+                                    <!-- 按钮 HTML (触发模态) -->
+                                    <a href="#myModal" class="btn btn-primary btn-lg" data-toggle="modal">前往連結</a>
+                                    
+                                    <!-- 模态 HTML -->
+                                    <div id="myModal" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">                  
+                                                <div class="modal-body">
+                                                  <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>     
+
+
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt="">
+                                <!--img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt=""-->
                                 <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
                                     repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,

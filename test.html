@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>在 Bootstrap 模式中插入 YouTube 视频</title>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<script>
+$(document).ready(function(){
+    /* 获取 iframe src 属性值，即 YouTube 视频 url
+     并将其存储在变量中 */
+    var url = $("#cartoonVideo").attr('src');
+    
+    /* 将空 url 值分配给 iframe src 属性时
+     模态隐藏，停止视频播放 */
+    $("#myModal").on('hide.bs.modal', function(){
+        $("#cartoonVideo").attr('src', '');
+    });
+    
+    /* 将最初存储的 url 分配回 iframe src
+     再次显示模态时的属性 */
+    $("#myModal").on('show.bs.modal', function(){
+        $("#cartoonVideo").attr('src', url);
+    });
+});
+</script>
+</head>
+<body>
+<div class="m-4">
+    <!-- 按钮 HTML (触发模态) -->
+    <a href="#myModal" class="btn btn-primary btn-lg" data-toggle="modal">Launch Demo Modal</a>
+    
+    <!-- 模态 HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>     
+</body>
+</html> 
