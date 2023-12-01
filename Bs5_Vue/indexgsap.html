@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+</head>
+<style>
+    body{
+        overflow: hidden;
+        background-color: black;
+        display: flex;
+        min-height: 100vh;
+        margin: 0;
+        justify-content: flex-start;
+    }
+    .box{
+        display: block;
+        background-color: brown;
+        height: 100px;
+        width: 100px;
+        border-radius: 30px;
+    }
+</style>
+<body>
+    
+    <div class="box"></div>
+
+</body>
+<script>
+    gsap.to(".box", {y:200, rotation:180, duration:2})
+</script>
+</html>

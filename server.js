@@ -4,12 +4,17 @@ var bodyParser = require("body-parser");
 server = express();
 var fs = require("fs");
 
-server.use(express.static("Bs5_Vue"));//web root
+server.use(express.static(__dirname+"/Bs5_Vue"));//web root
 //server.use(express.static("md110"));//web root
-server.use(bodyParser.urlencoded());
+server.use(bodyParser.urlencoded({extended:true}));
 server.use(bodyParser.json());
 
+// const fileUpload = require("express-fileupload");
+// server.use(fileUpload())
+
 const formidable  = require('formidable')
+ 
+
 
 var DB = require("nedb-promises");
 var ContactDB = DB.create("contact.db");
@@ -37,9 +42,9 @@ server.post("/contact",   function(req, res){
      form.parse(req, function (err,fields,files){
         console.log(fields);
         console.log(files);
-        fs.renameSync(files.imgSrc.filepath, "Bs5_Vue/upload/"+files.imgSrc.originalFilename);
+        fs.renameSync(files.myfile.filepath, "Bs5_Vue/upload/"+files.myfile.originalFilename);
         var newData = fields;
-        newData.imgSrc = "upload/"+files.imgSrc.originalFilename;
+        newData.imgSrc = "upload/"+files.myfile.originalFilename;
         PortfolioDB.insert(newData);
         res.redirect("/");
      });
@@ -59,6 +64,10 @@ server.get("/contact",   function(req, res){
  
 })
    
+
+    //email to manager
+    //res.send();
+  
 
 server.get("/service", function(req, res){
 
