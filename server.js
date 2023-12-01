@@ -9,6 +9,8 @@ server.use(express.static("Bs5_Vue"));//web root
 server.use(bodyParser.urlencoded());
 server.use(bodyParser.json());
 
+const formidable  = require('formidable')
+
 var DB = require("nedb-promises");
 var ContactDB = DB.create("contact.db");
 var PortfolioDB = DB.create("portfolio.db");
@@ -27,18 +29,36 @@ server.set("view engine", "ejs");
 server.set("views", __dirname+"/views");
 
 
-server.get("/contact", function(req, res){
+server.post("/contact",   function(req, res){
     //res.send("");
-    res.redirect("https:/md.nutc.edu.tw");
+    //var form = formidable({maxFileSize: 200*1024});
+     const form = new formidable.IncomingForm();
+    // form.maxFileSize = 200*1024;
+     form.parse(req, function (err,fields,files){
+        console.log(fields);
+        console.log(files);
+        fs.renameSync(files.imgSrc.filepath, "Bs5_Vue/upload/"+files.imgSrc.originalFilename);
+        var newData = fields;
+        newData.imgSrc = "upload/"+files.imgSrc.originalFilename;
+        PortfolioDB.insert(newData);
+        res.redirect("/");
+     });
+    
 });
 
-server.post("/contact", function(req, res){
-    console.log(req.body);
-    ContactDB.insert(req.body);
-    //email to manager
-    //res.send();
-    res.redirect("/");
+server.get("/contact",   function(req, res){
+    //var form = formidable({maxFileSize: 200*1024});
+    const form = new formidable.IncomingForm();
+    // form.maxFileSize = 200*1024;
+     form.parse(req, function (err,fields,files){
+        console.log(fields);
+        console.log(files);
+        
+        res.send("OK");
+     });
+ 
 })
+   
 
 server.get("/service", function(req, res){
 
