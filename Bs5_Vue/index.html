@@ -13,6 +13,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -101,7 +102,7 @@
     </script>
 
     <!-- Services Section -->
-    <section id="services" class="bg-black">
+    <section id="services" class="bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center text-white" >
@@ -115,8 +116,8 @@
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-stack-1x fa-inverse" v-bind:class="item.icon"></i>
                     </span>
-                    <h4 class="service-heading">{{item.title}}</h4>
-                    <p class="text-muted">{{item.text}}</p>
+                    <h4 class="service-heading text-white">{{item.title}}</h4>
+                    <p class="text-white-50">{{item.text}}</p>
                 </div>
 
             <!--<div class="row text-center text-white">
@@ -148,6 +149,21 @@
                 </div>
             </div> -->
         </div>
+        
+        <div class="row">
+            <div class="row gy-3 col-lg-12 text-center text-white" >
+                <h1 class="section-heading ">我可以幫您製作</h1>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div v-for="item in Services" class="col-md-4" id="services"> 
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                    <i class="fa fa-stack-1x fa-inverse" v-bind:class="item.icon"></i>
+                </span>
+                <h4 class="service-heading text-white">{{item.title}}</h4>
+                <p class="text-white-50">{{item.text}}</p>
+            </div>
     </section>
 
     <!-- Portfolio Grid Section -->
@@ -155,8 +171,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Portfolio</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading">作品集</h2>
+                    <h3 class="section-subheading text-muted">PV影片</h3>
                 </div>
             </div>
             <div class="row">
@@ -488,10 +504,10 @@
                                 <!--YT影片-->
                                 <div class="m-4">
                                     <!-- 按钮 HTML (触发模态) -->
-                                    <a href="#myModal" class="btn btn-primary btn-lg" data-toggle="modal">前往連結</a>
+                                    <a href="https://youtu.be/si3mIrvyGPY?si=X_xrntTDHf9wZUON" class="btn btn-primary btn-lg" data-toggle="modal">前往連結</a>
                                     
                                     <!-- 模态 HTML -->
-                                    <div id="myModal" class="modal fade">
+                                    <!--div id="myModal" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">                  
                                                 <div class="modal-body">
@@ -501,7 +517,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div-->
                                 </div>     
 
 
@@ -514,7 +530,7 @@
                                 <br>動畫:hiku</br> 
                                 <br>翻譯:伊亞修斯</br> 
                                 <br>(翻譯有根據影片節奏修改)</br> 
-                                <br>原始翻譯:https://home.gamer.com.tw/artwork.php...</br> 
+                                <br><link src="https://home.gamer.com.tw/artwork.php?sn=5235446" rel="原始翻譯">原始翻譯</br> 
                             </p>
                                 <ul class="list-inline">
                                     <li>製作日期:2023.4.10</li>
@@ -742,11 +758,12 @@
         var vueService = new Vue({
             el: "#services",
             data: {Services:[
-               {icon:'fa-word', title:'影片製作', text:'PV、MG動畫、宣傳影片'},
-               {icon:'fa-laptop', title:'翻譯', text:'日文歌曲翻譯、日文對話訪談文章翻譯'},
-               {icon:'fa-lock', title:'Web Security', text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.'}
+               {icon:'fa-youtube-square', title:'影片製作', text:'PV、MG動畫、宣傳影片'},
+               {icon:'fa-book', title:'翻譯', text:'日文歌曲翻譯、日文對話訪談文章翻譯'},
+               {icon:'fa-video-camera', title:'剪輯製作', text:'訪談、教學、遊戲精華'}
             ]}
         })
+        
     
     </script>
 </body>
