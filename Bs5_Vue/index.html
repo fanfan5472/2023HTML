@@ -5,11 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Hiku的委託聯絡/作品網站">
+    <meta name="author" content="Hiku">
 
     <title>Hiku</title>
-
+    <!--icon-->
+    <link rel="icon" href="img/Hiku_logo_ico.ico" type="icon">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -93,13 +94,12 @@
                     <a href="#contact" class=" btn btn-xl">聯絡我們</a>   
                 </div>
                 <div class="d-flex flex-row-reverse bd-highlight"><img class="img-fluid w-75 d-none d-sm-block "  src="img/Hikulogo.png" alt="Hiku Logo"></div>
-            </div> 
+                </div> 
+                <!--video class="videobg" autoplay muted loop>
+                    <source src="/Bs5_Vue/img/title_video.mp4">
+                </video-->
         </div>
     </header>
-
-    <script>
-        gsap.from(".box", {x:200, scale:2, rotation:180, duration:2})
-    </script>
 
     <!-- Services Section -->
     <section id="services" class="bg-dark">
@@ -107,8 +107,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center text-white" >
                     <h1 class="section-heading ">關於我</h1>
-                    <h3 class="section-subheading text-white">現年21歲。從大學開始接觸設計相關知識，目前已半熟練AE、PR、PS等等軟體基本操作，對於調光調色也有一定基礎。空閒時間則製作有關於日文歌曲的影片及翻譯，目前正在學習3D軟體中。</h3>
+                    <h3 class="section-subheading text-white-50" style="margin:30px">現年21歲。從大學開始接觸設計相關知識，目前已半熟練AE、PR、PS等等軟體基本操作，對於調光調色也有一定基礎。空閒時間則製作有關於日文歌曲的影片及翻譯，目前正在學習3D軟體中。</h3>
                 </div>
+                <div class="row col-lg-12 text-center text-white" >
+                    <h1 class="section-heading ">我可以幫您製作</h1>
+                </div>
+              
             </div>
             <div class="row text-center">
                 <div v-for="item in Services" class="col-md-4" id="services"> 
@@ -149,21 +153,6 @@
                 </div>
             </div> -->
         </div>
-        
-        <div class="row">
-            <div class="row gy-3 col-lg-12 text-center text-white" >
-                <h1 class="section-heading ">我可以幫您製作</h1>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div v-for="item in Services" class="col-md-4" id="services"> 
-                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-stack-1x fa-inverse" v-bind:class="item.icon"></i>
-                </span>
-                <h4 class="service-heading text-white">{{item.title}}</h4>
-                <p class="text-white-50">{{item.text}}</p>
-            </div>
     </section>
 
     <!-- Portfolio Grid Section -->
@@ -175,8 +164,8 @@
                     <h3 class="section-subheading text-muted">PV影片</h3>
                 </div>
             </div>
-            <div class="row">
-                <div v-for="item in Portfolio" class="col-md-4 col-sm-6 col-xs-12 portfolio-item">
+            <div class="g-3 row">
+                <div v-for="item in Portfolio" class="col-md-4 col-sm-6 col-xxl-3 portfolio-item">
                     <a v-bind:href="item.href" class="portfolio-link" data-bs-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -496,7 +485,7 @@
                                 <!-- Project Details Go Here -->
                                 <h2 style="margin:5px">墜入地獄</h2>
                                 <p style="margin:10px" class="text-black">地獄に落ちる</p> 
-                                <iframe  width="560" height="315" src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <iframe  id="YTvideo" src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                 <!--YT影片-->
                                 <div class="m-2">
                                     <!-- 按钮 HTML (触发模态) -->
@@ -547,24 +536,45 @@
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <h2>Project Heading</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered"
-                                    src="img/portfolio/startup-framework-preview.png" alt="">
-                                <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website
-                                    builder for professionals. Startup Framework contains components and complex blocks
-                                    (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost
-                                    any design. All of these components are made in the same style, and can easily be
-                                    integrated into projects, allowing you to create hundreds of solutions for your
-                                    future projects.</p>
-                                <p>You can preview Startup Framework <a
-                                        href="http://designmodo.com/startup/?u=787">here</a>.</p>
+                        <div class="col-8 ">
+                            <br class="modal-body ">
+                                <!-- Project Details Go Here -->
+                                <h2 style="margin:5px">大人</h2>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/et_TFecKFwA?si=x64kDPrNi28awCgK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                <!--YT影片-->
+                                <div class="m-2">
+                                    <!-- 按钮 HTML (触发模态) -->
+                                    <a href="https://youtu.be/et_TFecKFwA?si=_eQIXLLdV7fYTSKi" class="btn btn-dark btn-sm" data-toggle="modal">前往連結</a>
+                                    
+                                    <!-- 模态 HTML -->
+                                    <!--div id="myModal" class="modal fade">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">                  
+                                                <div class="modal-body">
+                                                  <div class="embed-responsive embed-responsive-16by9">
+                                                    <iframe id="cartoonVideo" class="embed-responsive-item" width="560" height="315" src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                                  </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div-->
+                                </div>     
+                                <p class="item-intro text-muted">「我們啊，已經回不去了」</p>
+                                <!--img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt=""-->
+                               
+                                <p style="margin:5px">原唱:カンザキイオリ</p>
+                                <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>     
+                                <p style="margin:5px">動畫:hiku</p> 
+                                <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p> 
+                                <li class="list-group-item border-0"> <a style="margin:5px" href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
+                            </p>
+                                <ul style="margin:5px" class="list-inline">
+                                    <li >製作日期:2023.4.10   製作內容:PV影片</li>
+                                </ul>
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
+                                        class="fa fa-times"></i> 關閉視窗</button>
                             </div>
                         </div>
                     </div>
@@ -572,7 +582,6 @@
             </div>
         </div>
     </div>
-
     <!-- Portfolio Modal 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
@@ -751,7 +760,7 @@
         var vueService = new Vue({
             el: "#services",
             data: {Services:[
-               {icon:'fa-youtube-square', title:'影片製作', text:'PV、MG動畫、宣傳影片'},
+               {icon:'fa-youtube-play', title:'影片製作', text:'PV、MG動畫、宣傳影片'},
                {icon:'fa-book', title:'翻譯', text:'日文歌曲翻譯、日文對話訪談文章翻譯'},
                {icon:'fa-video-camera', title:'剪輯製作', text:'訪談、教學、遊戲精華'}
             ]}
