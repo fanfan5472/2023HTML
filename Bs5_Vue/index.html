@@ -16,6 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -26,26 +27,6 @@
 
     <!-- Theme CSS -->
     <link href="css/agency.css" rel="stylesheet">
-    <!-- YT影片播放-->
-    <!-- <script>
-        $(document).ready(function(){
-            /* 获取 iframe src 属性值，即 YouTube 视频 url
-             并将其存储在变量中 */
-            var url = $("#cartoonVideo").attr('src');
-            
-            /* 将空 url 值分配给 iframe src 属性时
-             模态隐藏，停止视频播放 */
-            $("#myModal").on('hide.bs.modal', function(){
-                $("#cartoonVideo").attr('src', '');
-            });
-            
-            /* 将最初存储的 url 分配回 iframe src
-             再次显示模态时的属性 */
-            $("#myModal").on('show.bs.modal', function(){
-                $("#cartoonVideo").attr('src', url);
-            });
-        });
-        </script> -->
          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
 </head>
 
@@ -54,7 +35,9 @@
     <!-- Navigation -->
     <nav id="mainNav" class="navbar fixed-top navbar-expand-md  navbar-custom bg-dark">
         <div class="container">
-            <a class="float-start navbar-brand " href="#page-top">Hiku</a>
+            <a class="float-start navbar-brand " href="#page-top">
+                <!--img class="ms-auto" width="5%" src="img/Hikulogo.png" alt="Logo"-->5472
+            </a>
             <!-- Brand and toggle get grouped for better mobile display -->
             <nav class="float-end navbar-header ">
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
@@ -66,16 +49,16 @@
                 <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" >
                         <li>
-                            <a class=" ms-3" href="#services" >關於我</a>
+                            <a class=" m-3" href="#services" >關於我</a>
                         </li>
                         <li>
-                            <a class=" ms-3" href="#portfolio">作品集</a>
+                            <a class=" m-3" href="#portfolio">作品集</a>
                         </li>
                         <li>
-                            <a class=" ms-3" href="#about">學習經歷</a>
+                            <a class=" m-3" href="#about">學習經歷</a>
                         </li>
                         <li>
-                            <a class=" ms-3" href="#contact">聯絡我</a>
+                            <a class=" m-3" href="#contact">聯絡我</a>
                         </li>
                     </ul>
                 </div>
@@ -85,7 +68,7 @@
         </div>
     </nav>
     <!-- Header -->
-    <header>
+    <!--<header>
         <div class="container">
             <div class="d-sm-flex align-items-center justify-content-between">
                 <div class="intro-text">
@@ -95,10 +78,63 @@
                 </div>
                 <div class="d-flex flex-row-reverse bd-highlight"><img class="img-fluid w-75 d-none d-sm-block "  src="img/Hikulogo.png" alt="Hiku Logo"></div>
                 </div> 
-                <!--video class="videobg" autoplay muted loop>
+                <video class="videobg" autoplay muted loop>
                     <source src="/Bs5_Vue/img/title_video.mp4">
-                </video-->
+                </video>
         </div>
+    </header>-->
+
+    <!--02-->
+    <header>
+    <div class="row no-gutters">
+        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="15000">
+                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
+                    <div class="container">
+                    <div class="carousel-caption text-start">
+                        <h1>Example headline.</h1>
+                        <p>Some representative placeholder content for the first slide of the carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                    </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="15000"> 
+                    <div class="container">
+                    <div class="carousel-caption">
+                        <h1>Another example headline.</h1>
+                        <p>Some representative placeholder content for the second slide of the carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                    </div>
+                    </div>
+                    <video id="photolight" class="fullscreen-bg-img" src="title_video.mp4" alt="墜入地獄" autoplay muted></video>
+                </div>
+                <div class="carousel-item" data-bs-interval="15000">
+                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
+                    <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>One more for good measure.</h1>
+                        <p>Some representative placeholder content for the third slide of this carousel.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
     </header>
 
     <!-- Services Section -->
