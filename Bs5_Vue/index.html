@@ -320,51 +320,62 @@
                         <p class="text-muted">3D Design</p>
                     </div>
                 </div-->
-                
-                
+            </div>
+        </div>
+
+
+        <div class="row no-gutters bg-light-gray">
+            <div class="text-center">
+                <a class="fst-italic text-dark my-5">PV影片0</a>
+                <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner"> 
+                        <div class="carousel-item active" data-bs-interval="15000">
+                            <iframe id="YTvideo" class="pvfullscreen-bg-img"
+                                src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1" title="墜入地獄" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
+                                allowfullscreen data-gtm-yt-inspected-4="true" cc_lang_pref=zh></iframe>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="15000">
+                                <iframe id="YTvideo" class="pvfullscreen-bg-img"
+                                src="//www.youtube.com/embed/et_TFecKFwA?si=S20zGr-rfk6tMzQ0enablejsapi=1" title="墜入地獄" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
+                                allowfullscreen data-gtm-yt-inspected-4="true" cc_lang_pref=zh></iframe>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="15000">
+                            <video id="photolight" style="display:block; margin:auto;" class="pvfullscreen-bg-img"
+                                src="title_video.mp4" alt="墜入地獄" autoplay muted></video>
+                        </div>
+                    </div>
+                    <button onclick = "stop01()"> stop </button>
+                    <button onclick = "stop01()" class="carousel-control-prev carousel-dark pause01 " type="button"
+                        data-bs-target="#myCarousel2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon stopBtn" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button onclick = "stop01()" class="carousel-control-next carousel-dark stopBtn" type="button"
+                        data-bs-target="#myCarousel2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <script>
+                        // to stop the video
+                        function stop01() {
+                           let video = document.getElementById("YTvideo")
+                           video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
+                        }
+                        // to pause the video
+                        function pause01() {
+                           let video = document.getElementById("YTvideo")
+                           video.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
+                        }
+                     </script>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="row no-gutters">
-        <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="15000">
-                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
-                  
-                </div>
-                <div class="carousel-item" data-bs-interval="15000">
-                    <div class="container">
-                        <video id="photolight" class="fullscreen-bg-img" src="title_video.mp4" alt="墜入地獄" autoplay
-                            muted></video>
-                      
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="15000">
-                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
-                    <div class="container">
-                        
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev carousel-dark" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next carousel-dark" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
+
+
 
     <!-- About Section -->
     <section id="about">

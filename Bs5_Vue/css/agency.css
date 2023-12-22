@@ -258,6 +258,14 @@ fieldset[disabled] .btn-xl.active {
   object-fit: cover; /* 裁切超出的部分 */
 }
 
+.pvfullscreen-bg-img {
+  aspect-ratio: 16 / 9;
+  width: 75%;
+  object-fit: cover; /* 裁切超出的部分 */
+  object-position: center;
+}
+
+
 /*header {
   background-image: url('../img/header-bg.jpg');
   background-repeat: no-repeat;

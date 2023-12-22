@@ -1,218 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<title> Stop Youtube video using JavaScript. </title>
 </head>
-
+<style>
+   button {
+      height: 30px;
+      width: 80px;
+      background-color: aqua;
+   }
+</style>
 <body>
-    <div class="slick-list draggable">
-        <div class="slick-track" style="opacity: 1; width: 20000px; transform: translate3d(-2888px, 0px, 0px);">
-            <div class="slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--3 is-current" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="In8eI22f9ZQ" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_2.jpg" alt=""
-                                    src="/assets/images/movie_2.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide" data-slick-index="0" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--4" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="rtHi7P5tb_s" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_1.jpg" alt=""
-                                    src="/assets/images/movie_1.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide" data-slick-index="1" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--1" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="In8eI22f9ZQ" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_2.jpg" alt=""
-                                    src="/assets/images/movie_2.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide slick-current slick-active" data-slick-index="2" aria-hidden="false">
-                <div>
-                    <li class="slider slider--2" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="rtHi7P5tb_s" tabindex="0">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_1.jpg" alt=""
-                                    src="/assets/images/movie_1.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide" data-slick-index="3" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--3 is-current" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="In8eI22f9ZQ" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_2.jpg" alt=""
-                                    src="/assets/images/movie_2.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide slick-cloned" data-slick-index="4" id="" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--4" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="rtHi7P5tb_s" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_1.jpg" alt=""
-                                    src="/assets/images/movie_1.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide slick-cloned" data-slick-index="5" id="" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--1" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="In8eI22f9ZQ" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_2.jpg" alt=""
-                                    src="/assets/images/movie_2.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide slick-cloned" data-slick-index="6" id="" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--2" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="rtHi7P5tb_s" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_1.jpg" alt=""
-                                    src="/assets/images/movie_1.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg></div>
-                        </a></li>
-                </div>
-            </div>
-            <div class="slick-slide slick-cloned" data-slick-index="7" id="" aria-hidden="true" tabindex="-1">
-                <div>
-                    <li class="slider slider--3 is-current" style="width: 100%; display: inline-block;"><a
-                            class="anchor MovieModal-open" data-yt="In8eI22f9ZQ" tabindex="-1">
-                            <figure><img class="lazy_slide" data-original="/assets/images/movie_2.jpg" alt=""
-                                    src="/assets/images/movie_2.jpg"></figure>
-                            <div class="play"><svg xmlns="http://www.w3.org/2000/svg" width="135" height="135"
-                                    viewBox="0 0 135 135">
-                                    <g transform="translate(-573 -1179)">
-                                        <g class="a" transform="translate(573 1179)">
-                                            <circle class="c" cx="67.5" cy="67.5" r="67.5"></circle>
-                                            <circle class="d" cx="67.5" cy="67.5" r="67"></circle>
-                                        </g>
-                                        <g class="arrow">
-                                            <path class="b" d="M11.5,0,23,19H0Z"
-                                                transform="translate(653 1235) rotate(90)"></path>
-                                        </g>
-                                    </g>
-                                </svg>
-                            </div>
-                        </a></li>
-                </div>
-            </div>
-        </div>
-    </div>
+   <h2> Stop YouTube video using JavaScript. </h2>
+   <!-- embedding the YouTube video -->
+   <iframe id="videoId" src="https://www.youtube.com/embed/Q4O6yxUC_8g?enablejsapi=1"> </iframe>
+   <button onclick = "stop()"> stop </button>
+   <button onclick = "pause()"> pause </button>
+   <script>
+      // to stop the video
+      function stop() {
+         let video = document.getElementById("videoId")
+         video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
+      }
+      // to pause the video
+      function pause() {
+         let video = document.getElementById("videoId")
+         video.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
+      }
+   </script>
 </body>
-
 </html>
