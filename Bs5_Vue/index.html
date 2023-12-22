@@ -27,43 +27,60 @@
 
     <!-- Theme CSS -->
     <link href="css/agency.css" rel="stylesheet">
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
 </head>
 
 <body id="page-top" class="">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js">
+        $('.one-time').slick({
+            dots: true,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true
+        });
+    </script>
     <!-- Navigation -->
-    <nav id="mainNav" class="navbar fixed-top navbar-expand-md  navbar-custom bg-dark">
+    <nav id="mainNav" class="navbar fixed-top navbar-expand-md navbar-custom bg-dark ">
         <div class="container">
-            <a class="float-start navbar-brand " href="#page-top">
-                <!--img class="ms-auto" width="5%" src="img/Hikulogo.png" alt="Logo"-->5472
-            </a>
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <nav class="float-end navbar-header ">
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse"
-                    data-bs-target="#bs-example-navbar-collapse-1" style="color: #FFF;">
-                    <!-- <span class="navbar-toggler-icon bg-light"> </span> -->
-                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
-                </button>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class=" collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" >
-                        <li>
-                            <a class=" m-3" href="#services" >關於我</a>
-                        </li>
-                        <li>
-                            <a class=" m-3" href="#portfolio">作品集</a>
-                        </li>
-                        <li>
-                            <a class=" m-3" href="#about">學習經歷</a>
-                        </li>
-                        <li>
-                            <a class=" m-3" href="#contact">聯絡我</a>
-                        </li>
-                    </ul>
+            <div class="row ">
+                <div class="col-2 align-middle">
+                    <a class="float-start navbar-brand " href="#page-top">
+                        <img class="align-top ms-auto" width="30%" src="img/Hikulogo.png" alt="Logo">
+                    </a>
                 </div>
-                <!-- /.navbar-collapse -->
-            </nav>
+                <div class="col-10 align-middle ms-auto">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <nav class="float-end navbar-header ">
+                        <button type="button" class="navbar-toggler  " data-bs-toggle="collapse"
+                            data-bs-target="#bs-example-navbar-collapse-1" style="color: #FFF;">
+                            <!-- <span class="navbar-toggler-icon bg-light"> </span> -->
+                            <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                        </button>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class=" collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav ">
+                                <li>
+                                    <a class=" m-3" href="#services">關於我</a>
+                                </li>
+                                <li>
+                                    <a class=" m-3" href="#portfolio">作品集</a>
+                                </li>
+                                <li>
+                                    <a class=" m-3" href="#about">學習經歷</a>
+                                </li>
+                                <li>
+                                    <a class=" m-3" href="#contact">聯絡我</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+
+                    </nav>
+                </div>
+            </div>
             <!-- /.container-fluid -->
         </div>
     </nav>
@@ -86,71 +103,76 @@
 
     <!--02-->
     <header>
-    <div class="row no-gutters">
-        <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="row no-gutters">
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="15000">
+                        <img id="photolight" class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1>影片剪輯</h1>
+                                <p>遊戲精華、教學影片、訪談翻譯</p>
+                                <p><a class="btn btn-lg btn-primary" href="#contact">聯絡我</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="15000">
+                        <div class="container">
+                            <video id="photolight" class="fullscreen-bg-img" src="title_video.mp4" alt="墜入地獄" autoplay
+                                muted></video>
+                            <div class="carousel-caption">
+                                <h1>音樂PV製作</h1>
+                                <p>練習製作過多首音樂PV和MV</p>
+                                <p><a class="btn btn-lg btn-primary" href="#contact">聯絡我</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="15000">
+                        <img id="photolight" class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
+                        <div class="container">
+                            <div class="carousel-caption text-end">
+                                <h1>日文翻譯</h1>
+                                <p>歌曲、對話、文章翻譯</p>
+                                <p><a class="btn btn-lg btn-primary" href="#contact">聯絡我</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="15000">
-                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
-                    <div class="container">
-                    <div class="carousel-caption text-start">
-                        <h1>Example headline.</h1>
-                        <p>Some representative placeholder content for the first slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                    </div>
-                    </div>
-                </div>
-                <div class="carousel-item" data-bs-interval="15000"> 
-                    <div class="container">
-                    <div class="carousel-caption">
-                        <h1>Another example headline.</h1>
-                        <p>Some representative placeholder content for the second slide of the carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-                    </div>
-                    </div>
-                    <video id="photolight" class="fullscreen-bg-img" src="title_video.mp4" alt="墜入地獄" autoplay muted></video>
-                </div>
-                <div class="carousel-item" data-bs-interval="15000">
-                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
-                    <div class="container">
-                    <div class="carousel-caption text-end">
-                        <h1>One more for good measure.</h1>
-                        <p>Some representative placeholder content for the third slide of this carousel.</p>
-                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>
     </header>
 
     <!-- Services Section -->
     <section id="services" class="bg-dark">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center text-white" >
+                <div class="col-lg-12 text-center text-white">
                     <h1 class="section-heading ">關於我</h1>
-                    <h3 class="section-subheading text-white-50" style="margin:50px">現年21歲。從大學開始接觸設計相關知識，目前已半熟練AE、PR、PS等等軟體基本操作，對於調光調色也有一定基礎。空閒時間則製作有關於日文歌曲的影片及翻譯，目前正在學習3D軟體中。</h3>
+                    <h3 class="section-subheading text-white-50" style="margin:50px">
+                        現年21歲。從大學開始接觸設計相關知識，目前已半熟練AE、PR、PS等等軟體基本操作，對於調光調色也有一定基礎。空閒時間則製作有關於日文歌曲的影片及翻譯，目前正在學習3D軟體中。</h3>
                 </div>
-                <div class="col-lg-12 text-center text-white" >
+                <div class="col-lg-12 text-center text-white">
                     <h3 class="section-heading mb-5 ">我可以幫您製作</h3>
                 </div>
             </div>
             <div class="row text-center">
-                <div v-for="item in Services" class="col-md-4" id="services"> 
+                <div v-for="item in Services" class="col-md-4" id="services">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x" style="color:#E9CF6B"></i>
                         <i class="fa fa-stack-1x fa-inverse" v-bind:class="item.icon"></i>
@@ -158,7 +180,7 @@
                     <h4 class="service-heading text-white">{{item.title}}</h4>
                     <p class="text-white-50">{{item.text}}</p>
                 </div>
-            <!--<div class="row text-center text-white">
+                <!--<div class="row text-center text-white">
                 <div class="col-md-4 ">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
@@ -186,7 +208,7 @@
                         architecto quo inventore harum ex magni, dicta impedit.</p>
                 </div>
             </div> -->
-        </div>
+            </div>
     </section>
 
     <!-- Portfolio Grid Section -->
@@ -213,8 +235,8 @@
                         <p class="text-muted">{{item.subtitle}}</p>
                     </div>
                 </div>
-
                 <!--<div class="col-md-4 col-sm-6 portfolio-item">
+
                     <a href="#portfolioModal1" class="portfolio-link" data-bs-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
@@ -298,9 +320,51 @@
                         <p class="text-muted">3D Design</p>
                     </div>
                 </div-->
+                
+                
             </div>
         </div>
     </section>
+
+    <div class="row no-gutters">
+        <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#myCarousel2" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="15000">
+                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
+                  
+                </div>
+                <div class="carousel-item" data-bs-interval="15000">
+                    <div class="container">
+                        <video id="photolight" class="fullscreen-bg-img" src="title_video.mp4" alt="墜入地獄" autoplay
+                            muted></video>
+                      
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="15000">
+                    <img class="fullscreen-bg-img" src="img/portfolio/大人.jpg" alt="大人">
+                    <div class="container">
+                        
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev carousel-dark" type="button" data-bs-target="#myCarousel2" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next carousel-dark" type="button" data-bs-target="#myCarousel2" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 
     <!-- About Section -->
     <section id="about">
@@ -434,22 +498,26 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" action="/contact" method="POST" enctype="multipart/form-data">
+                    <form name="sentMessage" id="contactForm" action="/contact" method="POST"
+                        enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name"  name="myfile" required 
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name"
+                                        name="myfile" required
                                         data-validation-required-message="Please enter your name.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" name="myfile"
-                                        required data-validation-required-message="Please enter your email address.">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email"
+                                        name="myfile" required
+                                        data-validation-required-message="Please enter your email address.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" name="myfile"
-                                        required data-validation-required-message="Please enter your phone number.">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone"
+                                        name="myfile" required
+                                        data-validation-required-message="Please enter your phone number.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="from-group">
@@ -484,14 +552,17 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="justify-content-center list-group  list-group-horizontal social-buttons">
-                        <li class="border-0 list-group-item bg-transparent"><a href="https://www.youtube.com/@HIKU0311"><i class="fa fa-youtube-play"></i></a>
+                        <li class="border-0 list-group-item bg-transparent"><a
+                                href="https://www.youtube.com/@HIKU0311"><i class="fa fa-youtube-play"></i></a>
                         </li>
-                        <li class="border-0 list-group-item bg-transparent"><a href="https://www.instagram.com/hiku_0311/"><i class="fa fa-instagram"></i></a>
+                        <li class="border-0 list-group-item bg-transparent"><a
+                                href="https://www.instagram.com/hiku_0311/"><i class="fa fa-instagram"></i></a>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <ul class="justify-content-center list-group list-group-horizontal">
-                        <li class="list-group-item border-0"> <a href="https://www.youtube.com/@Kanzaki_ramenbu">神崎拉麵部</a>
+                        <li class="list-group-item border-0"> <a
+                                href="https://www.youtube.com/@Kanzaki_ramenbu">神崎拉麵部</a>
                         </li>
                     </ul>
                 </div>
@@ -516,17 +587,22 @@
                     <div class="row justify-content-center">
                         <div class="col-8 ">
                             <br class="modal-body ">
-                                <!-- Project Details Go Here -->
-                                <h2 style="margin:5px">墜入地獄</h2>
-                                <p style="margin:10px" class="text-black">地獄に落ちる</p> 
-                                <iframe  id="YTvideo" width="100%" height="100%" src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1" title="墜入地獄" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen data-gtm-yt-inspected-4="true"></iframe>
-                                <!--YT影片-->
-                                <div class="m-2">
-                                    <!-- 按钮 HTML (触发模态) -->
-                                    <a href="https://youtu.be/si3mIrvyGPY?si=X_xrntTDHf9wZUON" class="btn btn-dark btn-sm" data-toggle="modal">前往連結</a>
-                                    
-                                    <!-- 模态 HTML -->
-                                    <!--div id="myModal" class="modal fade">
+                            <!-- Project Details Go Here -->
+                            <h2 style="margin:5px">墜入地獄</h2>
+                            <p style="margin:10px" class="text-black">地獄に落ちる</p>
+                            <iframe id="YTvideo" width="100%" height="100%"
+                                src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1" title="墜入地獄"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen data-gtm-yt-inspected-4="true"></iframe>
+                            <!--YT影片-->
+                            <div class="m-2">
+                                <!-- 按钮 HTML (触发模态) -->
+                                <a href="https://youtu.be/si3mIrvyGPY?si=X_xrntTDHf9wZUON" class="btn btn-dark btn-sm"
+                                    data-toggle="modal">前往連結</a>
+
+                                <!-- 模态 HTML -->
+                                <!--div id="myModal" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">                  
                                                 <div class="modal-body">
@@ -537,25 +613,26 @@
                                             </div>
                                         </div>
                                     </div-->
-                                </div>     
-                                <p class="item-intro text-muted">「原諒我吧，現在馬上」</p>
-                                <p style="margin:5px">原唱:カンザキイオリ</p>
-                                <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>     
-                                <p style="margin:5px">動畫:hiku</p> 
-                                <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p> 
-                                <li class="list-group-item border-0"> <a style="margin:5px" href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
-                            </p>
+                            </div>
+                            <p class="item-intro text-muted">「原諒我吧，現在馬上」</p>
+                            <p style="margin:5px">原唱:カンザキイオリ</p>
+                            <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>
+                            <p style="margin:5px">動畫:hiku</p>
+                            <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p>
+                            <li class="list-group-item border-0"> <a style="margin:5px"
+                                    href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
+                                </p>
                                 <ul style="margin:5px" class="list-inline">
-                                    <li >製作日期:2023.4.10   製作內容:PV影片</li>
+                                    <li>製作日期:2023.4.10 製作內容:PV影片</li>
                                 </ul>
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
                                         class="fa fa-times"></i> 關閉視窗</button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Portfolio Modal 2 -->
@@ -572,16 +649,21 @@
                     <div class="row justify-content-center">
                         <div class="col-8 ">
                             <br class="modal-body ">
-                                <!-- Project Details Go Here -->
-                                <h2 style="margin:5px">大人</h2>
-                                <p class="item-intro text-muted">「我們啊，已經回不去了」</p>
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/et_TFecKFwA?si=x64kDPrNi28awCgK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                <!--YT影片-->
-                                <div class="m-2">
-                                    <!-- 按钮 HTML (触发模态) -->
-                                    <a href="https://youtu.be/et_TFecKFwA?si=_eQIXLLdV7fYTSKi" class="btn btn-dark btn-sm" data-toggle="modal">前往連結</a>
-                                    <!-- 模态 HTML -->
-                                    <!--div id="myModal" class="modal fade">
+                            <!-- Project Details Go Here -->
+                            <h2 style="margin:5px">大人</h2>
+                            <p class="item-intro text-muted">「我們啊，已經回不去了」</p>
+                            <iframe width="560" height="315"
+                                src="https://www.youtube.com/embed/et_TFecKFwA?si=x64kDPrNi28awCgK"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                            <!--YT影片-->
+                            <div class="m-2">
+                                <!-- 按钮 HTML (触发模态) -->
+                                <a href="https://youtu.be/et_TFecKFwA?si=_eQIXLLdV7fYTSKi" class="btn btn-dark btn-sm"
+                                    data-toggle="modal">前往連結</a>
+                                <!-- 模态 HTML -->
+                                <!--div id="myModal" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">                  
                                                 <div class="modal-body">
@@ -592,26 +674,27 @@
                                             </div>
                                         </div>
                                     </div-->
-                                </div>     
-                                <!--img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt=""-->
-                               
-                                <p style="margin:5px">原唱:カンザキイオリ</p>
-                                <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>     
-                                <p style="margin:5px">動畫:hiku</p> 
-                                <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p> 
-                                <li class="list-group-item border-0"> <a style="margin:5px" href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
-                            </p>
+                            </div>
+                            <!--img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt=""-->
+
+                            <p style="margin:5px">原唱:カンザキイオリ</p>
+                            <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>
+                            <p style="margin:5px">動畫:hiku</p>
+                            <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p>
+                            <li class="list-group-item border-0"> <a style="margin:5px"
+                                    href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
+                                </p>
                                 <ul style="margin:5px" class="list-inline">
-                                    <li >製作日期:2023.4.10   製作內容:PV影片</li>
+                                    <li>製作日期:2023.4.10 製作內容:PV影片</li>
                                 </ul>
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
                                         class="fa fa-times"></i> 關閉視窗</button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- Portfolio Modal 3 -->
     <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
@@ -630,8 +713,7 @@
                                 <!-- Project Details Go Here -->
                                 <h2>Project Name</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/treehouse-preview.png"
-                                    alt="">
+                                <img class="w-100 img-centered" src="img/portfolio/treehouse-preview.png" alt="">
                                 <p>Treehouse is a free PSD web template built by <a
                                         href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright
                                     and spacious design perfect for people or startup companies looking to showcase
@@ -775,29 +857,31 @@
     <!-- <script src="js/agency.min.js"></script> -->
     <script src="/vendor/vue/vue.min.js"></script>
     <script>
-        var myObject=new Vue({
-        el: "#portfolio",
-        data: {Portfolio: []}
+        var myObject = new Vue({
+            el: "#portfolio",
+            data: { Portfolio: [] }
         })
         $.ajax({
-            url:"/portfolio",
+            url: "/portfolio",
             method: "get",
             dataType: "json",
-            success: function(data){
+            success: function (data) {
                 myObject.Portfolio = data;
             }
         })
 
         var vueService = new Vue({
             el: "#services",
-            data: {Services:[
-               {icon:'fa-youtube-play', title:'影片製作', text:'PV、MG動畫、宣傳影片'},
-               {icon:'fa-book', title:'翻譯', text:'日文歌曲翻譯、日文對話訪談文章翻譯'},
-               {icon:'fa-video-camera', title:'剪輯製作', text:'訪談、教學、遊戲精華'}
-            ]}
+            data: {
+                Services: [
+                    { icon: 'fa-youtube-play', title: '影片製作', text: 'PV、MG動畫、宣傳影片' },
+                    { icon: 'fa-book', title: '翻譯', text: '日文歌曲翻譯、日文對話訪談文章翻譯' },
+                    { icon: 'fa-video-camera', title: '剪輯製作', text: '訪談、教學、遊戲精華' }
+                ]
+            }
         })
-        
-    
+
+
     </script>
 </body>
 
