@@ -66,10 +66,10 @@
                                     <a class=" m-3" href="#services">關於我</a>
                                 </li>
                                 <li>
-                                    <a class=" m-3" href="#portfolio">作品集</a>
+                                    <a class=" m-3" href="#about">製作影片</a>
                                 </li>
                                 <li>
-                                    <a class=" m-3" href="#about">學習經歷</a>
+                                    <a class=" m-3" href="#portfolio">其他作品</a>
                                 </li>
                                 <li>
                                     <a class=" m-3" href="#contact">聯絡我</a>
@@ -212,8 +212,63 @@
     </section>
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio" class="bg-light-gray">
-        <div class="container">
+    <section class="bg-light-gray">
+        <div id="about" class="row no-gutters bg-light-gray">
+            <div class="container text-center">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">製作集</h2>
+                    <h3 class="section-subheading text-muted">二創MV、PV影片</h3>
+                </div>
+                <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner"> 
+                        <div class="carousel-item active">
+                            <iframe id="YTvideo01" class="pvfullscreen-bg-img"
+                                src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1" title="墜入地獄" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
+                                allowfullscreen data-gtm-yt-inspected-4="true" cc_lang_pref=zh></iframe>
+                        </div>
+                        <div class="carousel-item">
+                                <iframe id="YTvideo" class="pvfullscreen-bg-img"
+                                src="//www.youtube.com/embed/et_TFecKFwA?si=S20zGr-rfk6tMzQ0enablejsapi=1" title="大人" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
+                                allowfullscreen data-gtm-yt-inspected-4="true" cc_lang_pref=zh></iframe>
+                        </div>
+                        <div class="carousel-item">
+                            <iframe id="YTvideo" class="pvfullscreen-bg-img"
+                                src="//www.youtube.com/embed/4t8x5Kha1Q0?si=5dhYDEZIz_oZKJrZ" title="人間じゃない癖に" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
+                                allowfullscreen data-gtm-yt-inspected-4="true" cc_lang_pref=zh></iframe>
+                        </div>
+                    </div>
+                    <button onclick = "stop01()"> stop </button>
+                    <button onclick = "stop01()" class="carousel-control-prev carousel-dark pause01 " type="button"
+                        data-bs-target="#myCarousel2" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon stopBtn" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button onclick = "stop01()" class="carousel-control-next carousel-dark stopBtn" type="button"
+                        data-bs-target="#myCarousel2" data-bs-slide="next">
+                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    <script>
+                        // to stop the video
+                        function stop01() {
+                           let video = document.getElementById("YTvideo01")
+                           video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
+                        }
+                        // to pause the video
+                        function pause01() {
+                           let video = document.getElementById("YTvideo01")
+                           video.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
+                        }
+                     </script>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="portfolio"class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">作品集</h2>
@@ -324,296 +379,129 @@
         </div>
 
 
-        <div class="row no-gutters bg-light-gray">
-            <div class="text-center">
-                <a class="fst-italic text-dark my-5">PV影片0</a>
-                <div id="myCarousel2" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner"> 
-                        <div class="carousel-item active" data-bs-interval="15000">
-                            <iframe id="YTvideo" class="pvfullscreen-bg-img"
-                                src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1" title="墜入地獄" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
-                                allowfullscreen data-gtm-yt-inspected-4="true" cc_lang_pref=zh></iframe>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="15000">
-                                <iframe id="YTvideo" class="pvfullscreen-bg-img"
-                                src="//www.youtube.com/embed/et_TFecKFwA?si=S20zGr-rfk6tMzQ0enablejsapi=1" title="墜入地獄" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share "
-                                allowfullscreen data-gtm-yt-inspected-4="true" cc_lang_pref=zh></iframe>
-                        </div>
-                        <div class="carousel-item" data-bs-interval="15000">
-                            <video id="photolight" style="display:block; margin:auto;" class="pvfullscreen-bg-img"
-                                src="title_video.mp4" alt="墜入地獄" autoplay muted></video>
-                        </div>
-                    </div>
-                    <button onclick = "stop01()"> stop </button>
-                    <button onclick = "stop01()" class="carousel-control-prev carousel-dark pause01 " type="button"
-                        data-bs-target="#myCarousel2" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon stopBtn" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button onclick = "stop01()" class="carousel-control-next carousel-dark stopBtn" type="button"
-                        data-bs-target="#myCarousel2" data-bs-slide="next">
-                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                    <script>
-                        // to stop the video
-                        function stop01() {
-                           let video = document.getElementById("YTvideo")
-                           video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
-                        }
-                        // to pause the video
-                        function pause01() {
-                           let video = document.getElementById("YTvideo")
-                           video.contentWindow.postMessage( '{"event":"command", "func":"pauseVideo", "args":""}', '*');
-                        }
-                     </script>
-                </div>
-            </div>
-        </div>
+        
     </section>
 
 
 
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="timeline">
-                        <li>
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/1.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>2019-2021</h4>
-                                    <h4 class="subheading">Our Humble Beginnings</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>March 2021</h4>
-                                    <h4 class="subheading">An Agency is Born</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>December 2021</h4>
-                                    <h4 class="subheading">Transition to Full Service</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="rounded-circle w-100" src="img/about/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>July 2022</h4>
-                                    <h4 class="subheading">Phase Two Expansion</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-                                        ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam,
-                                        recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!
-                                </h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Clients Aside -->
-    <aside class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/envato.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/designmodo.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/themeforest.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <a href="#">
-                        <img src="img/logos/creative-market.jpg" class="w-100 img-centered" alt="">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" action="/contact" method="POST"
-                        enctype="multipart/form-data">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name"
-                                        name="myfile" required
-                                        data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email"
-                                        name="myfile" required
-                                        data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone"
-                                        name="myfile" required
-                                        data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="from-group">
-                                    <input type="file" class="form-control" id="myfile" name="myfile">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required
-                                        data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container-fluid">
-            <div class="row ">
-                <div class="col-md-4">
-                    <span class="copyright">Kanzaki.ramenbu@gmail.com</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="justify-content-center list-group  list-group-horizontal social-buttons">
-                        <li class="border-0 list-group-item bg-transparent"><a
-                                href="https://www.youtube.com/@HIKU0311"><i class="fa fa-youtube-play"></i></a>
-                        </li>
-                        <li class="border-0 list-group-item bg-transparent"><a
-                                href="https://www.instagram.com/hiku_0311/"><i class="fa fa-instagram"></i></a>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="justify-content-center list-group list-group-horizontal">
-                        <li class="list-group-item border-0"> <a
-                                href="https://www.youtube.com/@Kanzaki_ramenbu">神崎拉麵部</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Portfolio Modals -->
-    <!-- Use the modals below to showcase details about your portfolio projects! -->
-
-    <!-- 作品 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
+        <!-- 表單 -->
+        <section id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Contact Us</h2>
+                        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                     </div>
                 </div>
-                <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-8 ">
-                            <br class="modal-body ">
-                            <!-- Project Details Go Here -->
-                            <h2 style="margin:5px">墜入地獄</h2>
-                            <p style="margin:10px" class="text-black">地獄に落ちる</p>
-                            <iframe id="YTvideo" width="100%" height="100%"
-                                src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1" title="墜入地獄"
-                                frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen data-gtm-yt-inspected-4="true"></iframe>
-                            <!--YT影片-->
-                            <div class="m-2">
-                                <!-- 按钮 HTML (触发模态) -->
-                                <a href="https://youtu.be/si3mIrvyGPY?si=X_xrntTDHf9wZUON" class="btn btn-dark btn-sm"
-                                    data-toggle="modal">前往連結</a>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form name="sentMessage" id="contactForm" action="/contact" method="POST"
+                            enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Your Name *" id="name"
+                                            name="myfile" required
+                                            data-validation-required-message="Please enter your name.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" placeholder="Your Email *" id="email"
+                                            name="myfile" required
+                                            data-validation-required-message="Please enter your email address.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="tel" class="form-control" placeholder="Your Phone *" id="phone"
+                                            name="myfile" required
+                                            data-validation-required-message="Please enter your phone number.">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="from-group">
+                                        <input type="file" class="form-control" id="myfile" name="myfile">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="Your Message *" id="message"
+                                            required
+                                            data-validation-required-message="Please enter a message."></textarea>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="col-lg-12 text-center">
+                                    <div id="success"></div>
+                                    <button type="submit" class="btn btn-xl">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                                <!-- 模态 HTML -->
-                                <!--div id="myModal" class="modal fade">
+        <footer>
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-md-4">
+                        <span class="copyright">Kanzaki.ramenbu@gmail.com</span>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="justify-content-center list-group  list-group-horizontal social-buttons">
+                            <li class="border-0 list-group-item bg-transparent"><a
+                                    href="https://www.youtube.com/@HIKU0311"><i class="fa fa-youtube-play"></i></a>
+                            </li>
+                            <li class="border-0 list-group-item bg-transparent"><a
+                                    href="https://www.instagram.com/hiku_0311/"><i class="fa fa-instagram"></i></a>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <ul class="justify-content-center list-group list-group-horizontal">
+                            <li class="list-group-item border-0"> <a
+                                    href="https://www.youtube.com/@Kanzaki_ramenbu">神崎拉麵部</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Portfolio Modals -->
+        <!-- Use the modals below to showcase details about your portfolio projects! -->
+
+        <!-- 作品 1 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-8 ">
+                                <br class="modal-body ">
+                                <!-- Project Details Go Here -->
+                                <h2 style="margin:5px">墜入地獄</h2>
+                                <p style="margin:10px" class="text-black">地獄に落ちる</p>
+                                <iframe id="YTvideo" width="100%" height="100%"
+                                    src="//www.youtube.com/embed/si3mIrvyGPY?si=LJ06VlEnSHbg4KNb?enablejsapi=1"
+                                    title="墜入地獄" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen data-gtm-yt-inspected-4="true"></iframe>
+                                <!--YT影片-->
+                                <div class="m-2">
+                                    <!-- 按钮 HTML (触发模态) -->
+                                    <a href="https://youtu.be/si3mIrvyGPY?si=X_xrntTDHf9wZUON"
+                                        class="btn btn-dark btn-sm" data-toggle="modal">前往連結</a>
+
+                                    <!-- 模态 HTML -->
+                                    <!--div id="myModal" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">                  
                                                 <div class="modal-body">
@@ -624,57 +512,57 @@
                                             </div>
                                         </div>
                                     </div-->
+                                </div>
+                                <p class="item-intro text-muted">「原諒我吧，現在馬上」</p>
+                                <p style="margin:5px">原唱:カンザキイオリ</p>
+                                <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>
+                                <p style="margin:5px">動畫:hiku</p>
+                                <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p>
+                                <li class="list-group-item border-0"> <a style="margin:5px"
+                                        href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
+                                    </p>
+                                    <ul style="margin:5px" class="list-inline">
+                                        <li>製作日期:2023.4.10 製作內容:PV影片</li>
+                                    </ul>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
+                                            class="fa fa-times"></i> 關閉視窗</button>
                             </div>
-                            <p class="item-intro text-muted">「原諒我吧，現在馬上」</p>
-                            <p style="margin:5px">原唱:カンザキイオリ</p>
-                            <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>
-                            <p style="margin:5px">動畫:hiku</p>
-                            <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p>
-                            <li class="list-group-item border-0"> <a style="margin:5px"
-                                    href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
-                                </p>
-                                <ul style="margin:5px" class="list-inline">
-                                    <li>製作日期:2023.4.10 製作內容:PV影片</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> 關閉視窗</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    </div>
+        </div>
 
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
+        <!-- Portfolio Modal 2 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-8 ">
-                            <br class="modal-body ">
-                            <!-- Project Details Go Here -->
-                            <h2 style="margin:5px">大人</h2>
-                            <p class="item-intro text-muted">「我們啊，已經回不去了」</p>
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/et_TFecKFwA?si=x64kDPrNi28awCgK"
-                                title="YouTube video player" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                            <!--YT影片-->
-                            <div class="m-2">
-                                <!-- 按钮 HTML (触发模态) -->
-                                <a href="https://youtu.be/et_TFecKFwA?si=_eQIXLLdV7fYTSKi" class="btn btn-dark btn-sm"
-                                    data-toggle="modal">前往連結</a>
-                                <!-- 模态 HTML -->
-                                <!--div id="myModal" class="modal fade">
+                    <div class="container-fluid">
+                        <div class="row justify-content-center">
+                            <div class="col-8 ">
+                                <br class="modal-body ">
+                                <!-- Project Details Go Here -->
+                                <h2 style="margin:5px">大人</h2>
+                                <p class="item-intro text-muted">「我們啊，已經回不去了」</p>
+                                <iframe width="560" height="315"
+                                    src="https://www.youtube.com/embed/et_TFecKFwA?si=x64kDPrNi28awCgK"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                                <!--YT影片-->
+                                <div class="m-2">
+                                    <!-- 按钮 HTML (触发模态) -->
+                                    <a href="https://youtu.be/et_TFecKFwA?si=_eQIXLLdV7fYTSKi"
+                                        class="btn btn-dark btn-sm" data-toggle="modal">前往連結</a>
+                                    <!-- 模态 HTML -->
+                                    <!--div id="myModal" class="modal fade">
                                         <div class="modal-dialog">
                                             <div class="modal-content">                  
                                                 <div class="modal-body">
@@ -685,215 +573,221 @@
                                             </div>
                                         </div>
                                     </div-->
-                            </div>
-                            <!--img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt=""-->
+                                </div>
+                                <!--img class="img-fluid img-centered" src="img/portfolio/roundicons-free.png" alt=""-->
 
-                            <p style="margin:5px">原唱:カンザキイオリ</p>
-                            <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>
-                            <p style="margin:5px">動畫:hiku</p>
-                            <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p>
-                            <li class="list-group-item border-0"> <a style="margin:5px"
-                                    href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
-                                </p>
-                                <ul style="margin:5px" class="list-inline">
-                                    <li>製作日期:2023.4.10 製作內容:PV影片</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> 關閉視窗</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/treehouse-preview.png" alt="">
-                                <p>Treehouse is a free PSD web template built by <a
-                                        href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright
-                                    and spacious design perfect for people or startup companies looking to showcase
-                                    their apps or other projects.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
+                                <p style="margin:5px">原唱:カンザキイオリ</p>
+                                <p style="margin:5px">作詞/作曲/編曲:カンザキイオリ</p>
+                                <p style="margin:5px">動畫:hiku</p>
+                                <p style="margin:5px">翻譯:伊亞修斯(翻譯有根據影片節奏修改)</p>
+                                <li class="list-group-item border-0"> <a style="margin:5px"
+                                        href="https://home.gamer.com.tw/artwork.php?sn=5235446">原始翻譯</a>
+                                    </p>
+                                    <ul style="margin:5px" class="list-inline">
+                                        <li>製作日期:2023.4.10 製作內容:PV影片</li>
+                                    </ul>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
+                                            class="fa fa-times"></i> 關閉視窗</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
+        </div>
+        <!-- Portfolio Modal 3 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/golden-preview.png" alt="">
-                                <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built
-                                    by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a
-                                    modern and clean one page web template that was made exclusively for Best PSD
-                                    Freebies. This template has a great portfolio, timeline, and meet your team sections
-                                    that can be easily modified to fit your needs.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here -->
+                                    <h2>Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="w-100 img-centered" src="img/portfolio/treehouse-preview.png" alt="">
+                                    <p>Treehouse is a free PSD web template built by <a
+                                            href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is
+                                        bright
+                                        and spacious design perfect for people or startup companies looking to showcase
+                                        their apps or other projects.</p>
+                                    <p>You can download the PSD template in this portfolio sample item at <a
+                                            href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
+                                            class="fa fa-times"></i> Close Project</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
+        <!-- Portfolio Modal 4 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/escape-preview.png" alt="">
-                                <p>Escape is a free PSD web template built by <a
-                                        href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one
-                                    page web template that was designed with agencies in mind. This template is ideal
-                                    for those looking for a simple one page solution to describe your business and offer
-                                    your services.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here -->
+                                    <h2>Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="w-100 img-centered" src="img/portfolio/golden-preview.png" alt="">
+                                    <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template
+                                        built
+                                        by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a
+                                        modern and clean one page web template that was made exclusively for Best PSD
+                                        Freebies. This template has a great portfolio, timeline, and meet your team
+                                        sections
+                                        that can be easily modified to fit your needs.</p>
+                                    <p>You can download the PSD template in this portfolio sample item at <a
+                                            href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
+                                            class="fa fa-times"></i> Close Project</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="close-modal" data-bs-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
+        <!-- Portfolio Modal 5 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-8">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Project Name</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                <img class="w-100 img-centered" src="img/portfolio/dreams-preview.png" alt="">
-                                <p>Dreams is a free PSD web template built by <a
-                                        href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a
-                                    modern one page web template designed for almost any purpose. It’s a beautiful
-                                    template that’s designed with the Bootstrap framework in mind.</p>
-                                <p>You can download the PSD template in this portfolio sample item at <a
-                                        href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.
-                                </p>
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
-                                        class="fa fa-times"></i> Close Project</button>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here -->
+                                    <h2>Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="w-100 img-centered" src="img/portfolio/escape-preview.png" alt="">
+                                    <p>Escape is a free PSD web template built by <a
+                                            href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a
+                                        one
+                                        page web template that was designed with agencies in mind. This template is
+                                        ideal
+                                        for those looking for a simple one page solution to describe your business and
+                                        offer
+                                        your services.</p>
+                                    <p>You can download the PSD template in this portfolio sample item at <a
+                                            href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
+                                            class="fa fa-times"></i> Close Project</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Portfolio Modal 6 -->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="close-modal" data-bs-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here -->
+                                    <h2>Project Name</h2>
+                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                                    <img class="w-100 img-centered" src="img/portfolio/dreams-preview.png" alt="">
+                                    <p>Dreams is a free PSD web template built by <a
+                                            href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a
+                                        modern one page web template designed for almost any purpose. It’s a beautiful
+                                        template that’s designed with the Bootstrap framework in mind.</p>
+                                    <p>You can download the PSD template in this portfolio sample item at <a
+                                            href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.
+                                    </p>
+                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"><i
+                                            class="fa fa-times"></i> Close Project</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+        <!-- jQuery -->
+        <script src="vendor/jquery/jquery.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
+        <!-- Bootstrap Core JavaScript -->
+        <!-- <script src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
 
-    <!-- Plugin JavaScript -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> -->
+        <!-- Plugin JavaScript -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> -->
 
-    <!-- Contact Form JavaScript -->
-    <!-- <script src="js/jqBootstrapValidation.js"></script> -->
-    <!-- <script src="js/contact_me.js"></script> -->
+        <!-- Contact Form JavaScript -->
+        <!-- <script src="js/jqBootstrapValidation.js"></script> -->
+        <!-- <script src="js/contact_me.js"></script> -->
 
-    <!-- Theme JavaScript -->
-    <!-- <script src="js/agency.min.js"></script> -->
-    <script src="/vendor/vue/vue.min.js"></script>
-    <script>
-        var myObject = new Vue({
-            el: "#portfolio",
-            data: { Portfolio: [] }
-        })
-        $.ajax({
-            url: "/portfolio",
-            method: "get",
-            dataType: "json",
-            success: function (data) {
-                myObject.Portfolio = data;
-            }
-        })
+        <!-- Theme JavaScript -->
+        <!-- <script src="js/agency.min.js"></script> -->
+        <script src="/vendor/vue/vue.min.js"></script>
+        <script>
+            var myObject = new Vue({
+                el: "#portfolio",
+                data: { Portfolio: [] }
+            })
+            $.ajax({
+                url: "/portfolio",
+                method: "get",
+                dataType: "json",
+                success: function (data) {
+                    myObject.Portfolio = data;
+                }
+            })
 
-        var vueService = new Vue({
-            el: "#services",
-            data: {
-                Services: [
-                    { icon: 'fa-youtube-play', title: '影片製作', text: 'PV、MG動畫、宣傳影片' },
-                    { icon: 'fa-book', title: '翻譯', text: '日文歌曲翻譯、日文對話訪談文章翻譯' },
-                    { icon: 'fa-video-camera', title: '剪輯製作', text: '訪談、教學、遊戲精華' }
-                ]
-            }
-        })
+            var vueService = new Vue({
+                el: "#services",
+                data: {
+                    Services: [
+                        { icon: 'fa-youtube-play', title: '影片製作', text: 'PV、MG動畫、宣傳影片' },
+                        { icon: 'fa-book', title: '翻譯', text: '日文歌曲翻譯、日文對話訪談文章翻譯' },
+                        { icon: 'fa-video-camera', title: '剪輯製作', text: '訪談、教學、遊戲精華' }
+                    ]
+                }
+            })
 
 
-    </script>
+        </script>
 </body>
 
 </html>
