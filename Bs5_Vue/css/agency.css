@@ -150,6 +150,9 @@ fieldset[disabled] .btn-xl.active {
   color: #fed136;
   background-color: white;
 }
+.bg-color{
+  background-color: #f7d96d; 
+}
 .navbar-custom {
   background-color: #222222;
   border-color: transparent;
@@ -617,6 +620,9 @@ section#contact .form-group input.form-control {
 section#contact .form-group textarea.form-control {
   height: 236px;
 }
+::placeholder { /* CSS 3 標準 */
+  color: rgb(156, 156, 156);
+}
 section#contact .form-control:focus {
   border-color: #fed136;
   box-shadow: none;
@@ -706,8 +712,8 @@ ul.social-buttons li a:active {
   -webkit-box-shadow: none;
   box-shadow: none;
   border: none;
-  min-height: 100%;
-  padding: 100px 0;
+  min-height: 110%;
+  padding: 30px 0;
   text-align: center;
 }
 .portfolio-modal .modal-content h2 {
@@ -783,6 +789,9 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+
 body {
   webkit-tap-highlight-color: #fed136;
 }
+
