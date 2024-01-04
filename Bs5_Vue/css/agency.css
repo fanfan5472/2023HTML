@@ -261,13 +261,18 @@ fieldset[disabled] .btn-xl.active {
   object-fit: cover; /* 裁切超出的部分 */
 }
 
+.pvfullscreen-bg-video {
+  width: 150%;
+  height: 730px;
+  object-fit: cover; /* 裁切超出的部分 */
+}
+
 .pvfullscreen-bg-img {
   aspect-ratio: 16 / 9;
   width: 75%;
   object-fit: cover; /* 裁切超出的部分 */
   object-position: center;
 }
-
 
 /*header {
   background-image: url('../img/header-bg.jpg');
@@ -600,7 +605,7 @@ aside.clients img {
 }
 section#contact {
   background-color: #222222;
-  background-image: url('../img/map-image.png');
+  background-image: url('../img//portfolio/大人.jpg');
   background-position: center;
   background-repeat: no-repeat;
 }
